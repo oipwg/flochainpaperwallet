@@ -113,12 +113,12 @@ function setCryptoCurrency(toThis) {
 		window.compressedWIFPrefix = 'Q';	
 		document.title = 'Dogecoin paper wallet generator. Wow! Many coin. Such shiny.';
 		break;
-	case 'Florincoin':
+	case 'Flochain':
 		window.networkVersion = 0x23;
 		window.privateKeyPrefix = 0xA3;
 		window.WIFPrefix = '176';
 		window.compressedWIFPrefix = 'R';
-		document.title = 'Bitcoin TESTNET paper wallet generator';
+		document.title = 'Flochain paper wallet generator';
 		break;
 	case 'Testnet':
 		window.networkVersion = 0x6F;
@@ -129,7 +129,7 @@ function setCryptoCurrency(toThis) {
 		break;
 	default:
 	  alert ('Invalid cryptocurrency "' + toThis + '" at initialization. Defaulting to Bitcoin.');
-	  setCryptoCurrency('Bitcoin');		
+	  setCryptoCurrency('Flochain');		
 	} // eof switch
 	return (true);
 }
@@ -153,6 +153,9 @@ switch (myDesign) {
 		break;
 	case 'alt-testnet':
 		setCryptoCurrency('Testnet');
+		break;
+	case 'alt-flochain':
+		setCryptoCurrency('Flochain');
 		break;
 	default:
 	setCryptoCurrency('Bitcoin');
@@ -10522,7 +10525,6 @@ Bitcoin.Util = {
                         <p style="margin-top: 0;"><strong>Change your wallet's design, language, or cryptocurrency here:</strong>
                           <select name="designPicker" id="designPicker" style="font-size: 12px;" onChange="setDesign(this.value, false);">
                             <option value="default">Standard Bitcoin Design</option>
-                            <option value="florincoin">Florincoin</option>
                             <option value="litecoin">Litecoin</option>
                             <option value="blackwhite">Black &amp; White Bitcoin</option>
                             <option value="holiday">Holiday / Christmas Bitcoin (English)</option>
@@ -10534,6 +10536,7 @@ Bitcoin.Util = {
                             <option value="alt-litecoin">Litecoin LTC</option>
                             <option value="alt-dogecoin">Dogecoin DOGE</option>
                             <option value="counterparty">Counterparty XCP</option>
+                            <option value="alt-flochain">Flochain FLO</option>
                             <option value="alt-testnet">"Testnet"</option>
                           </select>
                           <select name="langPicker" id="langPicker" style="font-size: 12px; display: inline;" onChange="setDesign('default', false, this.value);">
